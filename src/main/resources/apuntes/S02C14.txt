@@ -1,0 +1,35 @@
+=== Sesión 2 - Clase 14 ===
+MVC es un patrón de arquitectura porque engloba a varios patrones de diseño
+
+*Patrón Front Controller
+Utiliza un controlador como punto inicial para la gestión de las peticiones.
+El controlador gestiona las peticiones, mapea y delega las peticiones a otros
+componentes que podrán generar la vista adecuada para el usuario. Típicamente
+trabaja con un Dispatcher, el cual es el encargado del control de la vista y
+de la navegación.
+
+Funcionamiento general de Spring:
+1.-	El Front Controller 'DispatcherServlet' (DispatcherServler es el nombre de la clase
+	que aplica el patrón Front Controller) recibe una solicitud HTTP del navegador
+2.-	Aplica un controlador basado en la URL (Handler mapping) ya asigna el
+	request al navegador.
+3.-	El controlador se relaciona con componentes de la lógica de negocio y envía
+	datos a la vista usando el objeto Model
+4.-	El controlador retorna/asigna el nombre de la vista lógica a mostrar
+5.-	Se selecciona un ViewResolver, el cuál aplica un determinado tipo de vista
+	(HTML, PDF, Excel, etc)
+6.-	La vista es mostrada al cliente usando los datos del objeto Model
+
+Funciones separadas:
+-Controlador
+-Validadores
+-Objeto form (formulario)
+-DispatcherServlet
+-handler mapping
+-ViewResolver
+-et
+
+El tipo por defecto del ViewResolver es HTML
+Handler Mapping es la ruta de mapeo que tiene cada método de acción del controlador.
+Se configura o mapea con anotaciones como RequestMapping, GetMapping...
+
