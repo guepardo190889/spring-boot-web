@@ -3,7 +3,7 @@
  */
 package com.blackdeath.springbootweb.app.controller;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -43,10 +43,10 @@ public class IndexController {
 
 	@RequestMapping("/listar")
 	public String listar(Model model) {
-		List<Usuario> usuarios = new ArrayList<>();
-		usuarios.add(new Usuario("Seth", "Luis", "seth.luis@correo.com"));
-		usuarios.add(new Usuario("Libni", "Herrera", "libni.herrera@correo.com"));
-		usuarios.add(new Usuario("María", "Martínez", "maria.martinez@correo.com"));
+		List<Usuario> usuarios = Arrays.asList(new Usuario("Seth", "Luis", "seth.luis@correo.com"),
+				new Usuario("Libni", "Herrera", "libni.herrera@correo.com"),
+				new Usuario("María", "Martínez", "maria.martinez@correo.com"),
+				new Usuario("José", "Luis", "jose.luis@correo.com"));
 
 		model.addAttribute("titulo", "Listado de usuarios");
 		model.addAttribute("usuarios", usuarios);
