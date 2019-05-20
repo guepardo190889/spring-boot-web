@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.blackdeath.springbootweb.app.model.Usuario;
+
 /**
  * @author Seth Luis
  *
@@ -21,6 +23,18 @@ public class IndexController {
 		model.addAttribute("titulo", "Hola Spring Framework!");
 
 		return "index";
+	}
+
+	@RequestMapping("/perfil")
+	public String perfil(Model model) {
+		Usuario usuario = new Usuario();
+		usuario.setNombre("Seth");
+		usuario.setApellido("Luis");
+
+		model.addAttribute("usuario", usuario);
+		model.addAttribute("titulo", "Perfil del usuario ".concat(usuario.getNombre()));
+
+		return "perfil";
 	}
 
 }
