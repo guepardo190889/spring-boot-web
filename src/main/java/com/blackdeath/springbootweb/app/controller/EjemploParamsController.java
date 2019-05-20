@@ -17,6 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/params")
 public class EjemploParamsController {
 
+	@GetMapping("/")
+	public String index() {
+		return "params/index";
+	}
+
 	@GetMapping("/string")
 	public String param(@RequestParam(required = false, defaultValue = "no se encontró el parámetro") String texto,
 			Model model) {
