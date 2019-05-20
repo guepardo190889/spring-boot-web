@@ -1,0 +1,13 @@
+@RequestParam sirve para recuperar en el controlador un parámetro enviado desde la vista mediante la url.
+
+Por default el nombre del parámetro es el mismo nombre de la variable.
+
+Con el parámetro "name" es posible indicar el nombre del parámetro si es que este no coincide con el nombre
+de la variable. Ejemplo: @RequestParam(name = "texto") String texto.
+
+La forma de enviar los parámetros es la siguiente: http://localhost:8080/params/string?texto=Hola%20qu%C3%A9%20tal
+
+Por defecto todos los parámetros utilizados en @RequestParam son requeridos, pero esto se puede cambiar utilizando
+@RequestParam(required = false)
+
+Parámetros get de la URL o parámetros query de la URL son lo mismo
