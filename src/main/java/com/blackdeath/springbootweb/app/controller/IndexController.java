@@ -33,7 +33,7 @@ public class IndexController {
 		Usuario usuario = new Usuario();
 		usuario.setNombre("Seth");
 		usuario.setApellido("Luis");
-		usuario.setEmail("ing.seth.luis@gmail.com");
+		usuario.setEmail("seth.luis@correo.com");
 
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("titulo", "Perfil del usuario ".concat(usuario.getNombre()));
@@ -43,7 +43,10 @@ public class IndexController {
 
 	@RequestMapping("/listar")
 	public String listar(Model model) {
-		List<String> usuarios = new ArrayList<>();
+		List<Usuario> usuarios = new ArrayList<>();
+		usuarios.add(new Usuario("Seth", "Luis", "seth.luis@correo.com"));
+		usuarios.add(new Usuario("Libni", "Herrera", "libni.herrera@correo.com"));
+		usuarios.add(new Usuario("María", "Martínez", "maria.martinez@correo.com"));
 
 		model.addAttribute("titulo", "Listado de usuarios");
 		model.addAttribute("usuarios", usuarios);
