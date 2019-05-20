@@ -1,0 +1,6 @@
+La anotación @ModelAttribute normalmente se utiliza cuando se desea rellenar campos de la vista como combos,
+radiobuttons, checks, etc con valores default o precargados.
+
+@ModelAttribute es una manera de pasar datos a la vista de forma independiente a los métodos handler.
+
+Esto se aplica a todos los métodos y vistas del controlador
