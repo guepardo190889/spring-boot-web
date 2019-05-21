@@ -3,6 +3,8 @@
  */
 package com.blackdeath.springbootweb.app.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,22 @@ public class EjemploParamsController {
 
 	@GetMapping("/mix-params")
 	public String param(@RequestParam String saludo, Integer numero, Model model) {
+		model.addAttribute("resultado", "El saludo enviado es: '" + saludo + "' y el número es '" + numero + "'");
+		model.addAttribute("titulo", "Recibir parámetros del request HTTP GET por URL");
+		return "params/ver";
+	}
+
+	@GetMapping("/mix-params-request")
+	public String param(HttpServletRequest request, Model model) {
+		String saludo = request.getParameter("saludo");
+		Integer numero = 0;
+
+		try {
+			numero = Integer.parseInt(request.getParameter("numero"));
+		} catch (NumberFormatException e) {
+			numero = 0;
+		}
+
 		model.addAttribute("resultado", "El saludo enviado es: '" + saludo + "' y el número es '" + numero + "'");
 		model.addAttribute("titulo", "Recibir parámetros del request HTTP GET por URL");
 		return "params/ver";
