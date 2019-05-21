@@ -12,7 +12,12 @@
 			th:href="@{/params/string(texto='param enviado a la URL desde Thymeleaf')}">/params/string?texto=param
 				enviado a la URL desde Thymeleaf</a></li>
 		<li><a th:href="@{/params/string(texto='Hola Seth!')}">/params/string?texto=param
-				Hola Set!</a></li>
+				Hola Seth!</a></li>
+
+		<li><a
+			th:href="@{/params/mix-params(saludo='Cómo estás Seth?', numero=7)}">/params/mix-params?saludo=Cómo
+				estás Seth&amp;numero=7</a></li>
+
 	</ul>
 
 </body>
