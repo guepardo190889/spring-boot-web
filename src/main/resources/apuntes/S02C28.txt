@@ -1,0 +1,4 @@
+La diferencia entre redirigir y cargar una vista que cuando se redirige se reinicia la petición, se realiza una nueva petición y todos los parámetros del request se pierden.
+
+redirect > reinicia la petición. Cambia la url. Debe usarse para rutas externas al proyecto
+forward > realiza un dispatcher a la nueva página y la rendereiza. No cambia la url. Debe usarse para rutas de controlladores, rutas internas del proyecto
