@@ -1,0 +1,20 @@
+mvnw -> Maven Wraper > Script para construir el proyecto con Maven
+
+JAVA_HOME en Linux:
+/etc/profile
+/etc/environment/
+~/.bashrc (para el usuario)
+
+Abrir el archivo ~./bashrc y escribir:
+export JAVA_HOME=/path/to/java/installation
+Guardar archivo
+source ~/.bashrc
+Escribir en terminal
+echo $JAVA_HOME
+y deberìa mostrar: /path/to/java/installation
+
+La creación del proyecto se realiza así:
+./mvnw package
+Y se ejecuta así:
+java -jar ./target/spring-boot-web-0.0.1-SNAPSHOT.jar
+
